@@ -8,20 +8,28 @@ import axios from 'axios';
 import 'react-chat-theme/lib/styles.css';
 
 import logo from './logo.svg';
+import covid19 from './images/covid19.png'
+import dr_eugenius from './images/dr_eugenius.png'
 
 var language = detectBrowserLanguage()
 
 setTranslations({
   pt: {
+    title: "QAVID-19",
+    subtitle: "Responde às tuas questões acerca da COVID-19 de forma confiável!",
+    placeholder: "Escreve a tua questão...",
     welcome: "Bem-vindo(a) ao **QAVID-19**! Eu sou o _Dr. Eugenius_ e estou aqui para responder a qualquer questão que possas ter sobre a COVID-19! Então, como posso ajudar-te?",
     think: "Hmmm deixa-me pensar...",
     exit: "Por favor, espera um momento enquanto procuro nas minhas fontes seguras!",
     sorry: "Desculpa, mas não consegui encontrar uma resposta... Queres perguntar-me algo mais?",
     found: "Isto foi o que encontrei:",
     more: "Podes descobrir mais",
-    source: "aqui"
+    source: "aqui",
   },
   en: {
+    title: "QAVID-19",
+    subtitle: "Get a trustworthy answer for your COVID-19 questions!",
+    placeholder: "Type your question...",
     welcome: "Welcome to **QAVID-19** chatbot! I am _Dr. Eugenius_ and I'm here to answer any question you have on COVID-19. So, how can I help you?",
     think: "Hmmm let me think...",
     exit: "Please, wait a few moments while I'm looking in my reliable sources!",
@@ -34,7 +42,7 @@ setTranslations({
 
 if (language.includes('pt')) {
   language = 'pt'
-  setLocale('pt')
+  setLocale('pt ')
 }
 else {
   language = 'en'
@@ -83,12 +91,12 @@ function App() {
       <div className="App">
         <Widget
           handleNewUserMessage={handleNewUserMessage}
-          profileAvatar={logo}
-          title="QAVID-19"
-          subtitle="Get a trustworthy answer for your COVID-19 questions!"
+          title={translate('title')}
+          subtitle={translate('subtitle')}
+          senderPlaceHolder={translate('placeholder')}
           showTimeStamp
-          profileAvatar="https://lh3.googleusercontent.com/proxy/pHF5qCozmHN0R1ASFNMANhZoDAUHpDsQ1olvp0UAfSrYfQCLqK3iVuItWFdPwIdKLrIMNNH96X5ypwN9zsGxs9vg5zDc_fRky3knGX_-nFk3UGCLQ_fegL6nfoMeWFSL0jjUVPMjkcojrgDAePPBvBwXOalk"
-          titleAvatar="https://cdn.icon-icons.com/icons2/2238/PNG/512/virus_coronavirus_covid_covid_icon_134782.png"
+          profileAvatar={dr_eugenius}
+          titleAvatar={covid19}
         />
       </div>
     );
