@@ -42,7 +42,7 @@ setTranslations({
 
 if (language.includes('pt')) {
   language = 'pt'
-  setLocale('pt ')
+  setLocale('pt')
 }
 else {
   language = 'en'
